@@ -9,6 +9,10 @@ showTableOfContents: true
 
 See the excellent post, [Things you can do with a debugger but not with print debugging](https://mahesh-hegde.github.io/posts/what_debugger_can/) that inspired this one.
 
+As anyone who grew up coding in Borland development tools or in Microsoft Visual Studio knows, using the debugger is amazing.  The post that inspired this one gives many fine examples of things the debugger is uniquely good at.
+
+I'd like to offer several examples that I have seen, where the debugger is nowhere near as good as print debugging.
+
 People do or do not use debuggers for a variety of reasons. For one thing, they are hard to setup in many codebases. Second, you can't use them when your application is running on remote environments (such as kuberenetes). So, anecdotally, I have seen way more people using Print/`log.Debug` compared to a debugger.
 
 Which is a shame, because while debug logging is convenient at times, debuggers can do some things which you can't easily simulate via debug logging.
