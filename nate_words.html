@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Nate Words</title>
+  <title>Random Word Display</title>
   <style>
     body {
       display: flex;
@@ -12,9 +12,10 @@
       margin: 0;
       font-family: sans-serif;
       background: #f0f0f0;
+      user-select: none; /* prevent accidental text selection */
     }
     #word {
-      font-size: 15em;
+      font-size: 5em;
       text-align: center;
     }
   </style>
@@ -24,9 +25,7 @@
 
   <script>
     // Your word list
-    const words = [
-      "the", "see", "can", "we", "I",
-    ];
+    const words = ["the", "see", "can", "we", "I"];
 
     const wordElement = document.getElementById("word");
     let lastWord = null;
@@ -45,8 +44,12 @@
     // Show one word when the page loads
     showRandomWord();
 
-    // Show a new random word when any key is pressed
+    // Change word on key press
     document.addEventListener("keydown", showRandomWord);
+
+    // Change word on tap/click
+    document.addEventListener("click", showRandomWord);
+    document.addEventListener("touchstart", showRandomWord);
   </script>
 </body>
 </html>
