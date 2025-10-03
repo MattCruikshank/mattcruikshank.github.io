@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nate Words</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+      background: #f0f0f0;
+    }
+    #word {
+      font-size: 15em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="word"></div>
+
+  <script>
+    // Your word list
+    const words = [
+      "the", "see", "can", "we", "I",
+    ];
+
+    const wordElement = document.getElementById("word");
+    let lastWord = null;
+
+    function showRandomWord() {
+      let newWord;
+      do {
+        const randomIndex = Math.floor(Math.random() * words.length);
+        newWord = words[randomIndex];
+      } while (newWord === lastWord && words.length > 1);
+      
+      wordElement.textContent = newWord;
+      lastWord = newWord;
+    }
+
+    // Show one word when the page loads
+    showRandomWord();
+
+    // Show a new random word when any key is pressed
+    document.addEventListener("keydown", showRandomWord);
+  </script>
+</body>
+</html>
